@@ -32,7 +32,7 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Login</a>
+                        <a class="nav-link" href="../frontend/login.html">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../frontend/register.html">Register</a>

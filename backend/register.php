@@ -1,20 +1,11 @@
 <?php
-// Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "QuizApp";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require 'config.php'; // Include database configuration
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Establish database connection
+    $conn = getDbConnection();
+
     $user = $_POST['username'];
     $email = $_POST['email'];
     $pass = $_POST['password'];
@@ -49,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
     }
-}
 
-$conn->close();
+    // Close the database connection
+    $conn->close();
+}
 ?>
